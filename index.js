@@ -195,12 +195,6 @@ async function run() {
 }
 run().catch(console.dir);
 
-// this code for development
-
-// app.get('/', (req, res) => {
-//     res.send('Server is running');
-// })
-
 app.get('/', (req, res) => {
   res.send('hello world');
 })
