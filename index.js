@@ -150,8 +150,6 @@ async function run() {
 
       })
 
-
-
       //get my order by gmail
       app.post('/services/myOrder', async (req, res) => {
           const email = req.body.email;
@@ -197,8 +195,10 @@ async function run() {
 }
 run().catch(console.dir);
 
+// this code for development
+
 app.get('/', (req, res) => {
-    res.send('hello world');
+    res.send('Server is running');
 })
 
 app.listen(port, (req, res) => {
