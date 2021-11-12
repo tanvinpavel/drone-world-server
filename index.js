@@ -197,8 +197,12 @@ run().catch(console.dir);
 
 // this code for development
 
+// app.get('/', (req, res) => {
+//     res.send('Server is running');
+// })
+
 app.get('/', (req, res) => {
-    res.send('Server is running');
+  res.send('hello world');
 })
 
 app.listen(port, (req, res) => {
