@@ -96,7 +96,7 @@ async function run() {
         const options = { upsert: true };
         const updateStatus =  {
             $set: {
-              "status": status === 'pending' ? 'approved ' : 'pending'
+              "status": status === 'pending' ? 'shipped' : 'pending'
             },
           };
 
