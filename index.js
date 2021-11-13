@@ -36,7 +36,6 @@ async function run() {
         const cursor = productsCollection.find({});
         const product = await cursor.toArray();
 
-        console.log('data load successfully');
         res.json(product);
       })
 
@@ -162,14 +161,23 @@ async function run() {
       })
 
       //delete order item by _id
-      app.get("/order/deleteOrder/:id", async (req, res) => {
+      app.get("/order/deleteOrder/:id", async(req, res) => {
           const id = req.params.id;
-          console.log(id);
           const query = {_id: ObjectId(id)}
 
           const result = await orderCollection.deleteOne(query);
 
           console.log('delete successfully', result);
+          res.json(result);
+      })
+
+      //delete a product
+      app.get("/delete_product/:id", async(req, res) => {
+          const id = req.params.id;
+          const query = {_id: ObjectId(id)};
+
+          const result = await productsCollection.deleteOne(query);
+
           res.json(result);
       })
 
